@@ -18,7 +18,7 @@ if (submit) {
             };
             datamovie.push(newmovie);
             localStorage.setItem("movies", JSON.stringify(datamovie));
-            clairInput();
+           
             renderMovies();
             window.location.href = "index.html";
         };
@@ -26,14 +26,6 @@ if (submit) {
     };
 }
 
-function clairInput() {
-    document.getElementById("nom").value = "";
-    document.getElementById("annee").value = "";
-    document.getElementById("realisateur").value = "";
-    document.getElementById("genre").value = "";
-    document.getElementById("status").value = "";
-    
-}
 
 function renderMovies() {
     const movies = JSON.parse(localStorage.getItem("movies")) || [];
@@ -48,8 +40,11 @@ function renderMovies() {
         const movieItem = document.createElement("div");
         movieItem.classList.add("movie-item");
         movieItem.innerHTML = `
-          ${movie.img ? `<img src="${movie.img}" alt="Affiche du film" style="width: 150px; height: auto; border-radius: 10px;">` : ""}
-            <h3>${movie.nom}</h3>
+        <div class="card" style="width: 9.4rem; height:250px;" >
+         
+         <a href="detail.html" ><img src="${movie.img}" > </a>
+         </div>
+           <h3>${movie.nom}</h3>
         `;
         recipeMovies.appendChild(movieItem);
     });  
