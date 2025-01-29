@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="ajouter.css">
 </head>
 <body>
-
     <header>
         <div class="nav">
             <a href="index.html">HOME</a>
@@ -46,15 +45,29 @@
 
                 <div class="form-group">
                     <label for="file">Télécharger :</label>
-                    <button class="download-btn">
+                    <input type="file" accept="image/*" id="img" onchange="showPreview(event);" style="display: none;">
+                    
+                    <button class="download-btn" type="button" onclick="document.getElementById('img').click();">
                         <img src="images/5791822.png" alt="Télécharger">
                     </button>
-                </div>
+                    </div>
 
                 <button class="btn-ajouter" id="submit" type="button">Ajouter</button>
             </form>
         </div>
     </section>
       <script src="index.js"></script>
+      
+      <script>
+        function showPreview(event) {
+            if (event.target.files.length > 0) {
+                var src = URL.createObjectURL(event.target.files[0]);
+                var preview = document.getElementById("file-image");
+                preview.src = src;
+                preview.style.display = "block";
+                preview.style.borderRadius = "10px";
+            }
+        }
+        </script>
 </body>
 </html>
