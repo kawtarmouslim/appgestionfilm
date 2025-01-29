@@ -64,9 +64,20 @@ header {
 
 
 section {
+    
     padding: 20px;
     background-color: #CFE3D7;
    
+}
+#movieList{
+   
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.movie-item{
+    width: 20%;
 }
 
 h2 {

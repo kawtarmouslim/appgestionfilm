@@ -1,7 +1,6 @@
-
+// Vérifie que le bouton existe avant d'ajouter un événement
 const submit = document.getElementById("submit");
 const recipeMovies = document.getElementById("movieList");
-
 let datamovie = localStorage.getItem("movies") ? JSON.parse(localStorage.getItem("movies")) : [];
 
 if (submit) {
@@ -17,19 +16,15 @@ if (submit) {
                 status: document.getElementById("status")?.value,
                 img: e.target.result,//result est utilisé pour accéder aux données(comme l'ecture d'un fichiet)
             };
-
             datamovie.push(newmovie);
             localStorage.setItem("movies", JSON.stringify(datamovie));
             clairInput();
             renderMovies();
             window.location.href = "index.html";
         };
-
         reader.readAsDataURL(imgInput.files[0]);
     };
 }
-
-
 
 function clairInput() {
     document.getElementById("nom").value = "";
@@ -53,14 +48,11 @@ function renderMovies() {
         const movieItem = document.createElement("div");
         movieItem.classList.add("movie-item");
         movieItem.innerHTML = `
-          <div style="width: 100%; max-width: 300px; margin: 20px auto; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; background-color: #fff; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); text-align: center;">
-                 <h3>${movie.nom}</h3>
-                ${movie.img ? `<img src="${movie.img}" alt="Affiche du film" style="width: 150px; height: auto; border-radius: 10px;">` : ""}
-          </div>
+          ${movie.img ? `<img src="${movie.img}" alt="Affiche du film" style="width: 150px; height: auto; border-radius: 10px;">` : ""}
+            <h3>${movie.nom}</h3>
         `;
         recipeMovies.appendChild(movieItem);
     });  
 }
-// Charge les films au chargement de la page:
 document.addEventListener("DOMContentLoaded", renderMovies);
   
