@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #D6E8DB;
+}
+
+header {
+    background: #D6E8DB;
+    padding: 20px;
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    color: white;
+    text-align: center;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #e8efeb;
+    margin: 0 15px;
+    font-size: 18px;
+    
+   
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.form-box {
+    background: #326B5A;
+    padding: 30px;
+    border-radius: 10px;
+    width: 500px;
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-group label {
+    font-size: 16px;
+    flex: 1;
+}
+
+.form-group input {
+    flex: 2;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+}
+
+.download-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.download-btn img {
+    width: 40px;
+}
+
+
+.btn-ajouter {
+    width: 100%;
+    padding: 10px;
+    background: #A0C4A7;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-ajouter:hover {
+    background: #8FAE99;
+}

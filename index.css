@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+
+header {
+    background-image: url("images/The-Promised-Land-07.jpg");
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+    height: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.nav {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+.search-box {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.search-box input {
+    width: 300px;
+    padding: 8px;
+    border-radius: 20px;
+    border: none;
+}
+
+.search-box button {
+    padding: 8px 15px;
+    margin-left: 10px;
+    background: #6C8F7D;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background: #5a7a69;
+}
+
+
+section {
+    
+    padding: 20px;
+    background-color: #CFE3D7;
+   
+}
+#movieList{
+   
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.movie-item{
+    width: 13%;
+}
+
+h2 {
+   
+    font-size: 9px;
+}
+
