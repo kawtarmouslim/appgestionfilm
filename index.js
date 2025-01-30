@@ -40,7 +40,7 @@ function renderMovies() {
         const movieItem = document.createElement("div");
         movieItem.classList.add("movie-item");
         movieItem.innerHTML = `
-        <div class="card" style="width: 9.4rem; height:250px;" >
+        <div class="card">
          
          <a href="detail.html" ><img src="${movie.img}" > </a>
          </div>
