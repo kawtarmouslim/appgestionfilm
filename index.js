@@ -92,7 +92,7 @@ function selectmovie(index) {
          
         const updateButton = document.getElementById("updateBtn");
     updateButton.addEventListener("click", function () {
-        showUpdateForm(selectedFilm);  // Afficher le formulaire de mise à jour
+        showUpdateForm(selectedFilm); 
     });
 
 };
@@ -125,9 +125,7 @@ function showUpdateForm(film) {
 
     const updateForm = document.getElementById("updateForm");
     updateForm.addEventListener("submit", function (e) {
-        e.preventDefault();  // Empêcher l'envoi du formulaire
-
-        // Récupère les nouvelles valeurs
+        e.preventDefault();  
         const updatedFilm = {
             ...film,
             nom: document.getElementById("nom").value,
@@ -138,23 +136,14 @@ function showUpdateForm(film) {
         };
 
         console.log("Film modifié :", updatedFilm);
-
-        // Mettre à jour les données dans localStorage
         let movies = JSON.parse(localStorage.getItem("movies")) || [];
-        const index = movies.findIndex(f => f.nom === film.nom);  // Trouver le film à mettre à jour
+        const index = movies.findIndex(f => f.nom === film.nom);
         if (index !== -1) {
-            movies[index] = updatedFilm;  // Mettre à jour le film dans le tableau
-            localStorage.setItem("movies", JSON.stringify(movies));  // Sauvegarder la liste mise à jour
+            movies[index] = updatedFilm;  
+            localStorage.setItem("movies", JSON.stringify(movies));  
         }
-
-        // Sauvegarder le film modifié dans selectedfilm
         localStorage.setItem("selectedfilm", JSON.stringify(updatedFilm));
-
-        // Afficher un message de confirmation
         alert("Le film a été modifié avec succès !");
-        
-        // Recharge les détails du film modifié
-       // showDetails();  // Appeler la fonction qui montre les détails après modification
        window.location.href = "index.html";
 
     });
@@ -177,11 +166,7 @@ function searchMovies() {
     const searchQuery = document.getElementById("searchInput").value.toLowerCase();
     const movies = JSON.parse(localStorage.getItem("movies")) || [];
     const recipeMovies = document.getElementById("movieList");
-
-    // Vider l'affichage précédent
     recipeMovies.innerHTML = "";
-
-    // Filtrer les films en fonction de la recherche
     const filteredMovies = movies.filter(movie =>
         movie.nom.toLowerCase().includes(searchQuery)
     );
@@ -190,8 +175,6 @@ function searchMovies() {
         recipeMovies.innerHTML = "<p>Aucun film trouvé.</p>";
         return;
     }
-
-    // Affichage des films filtrés
     filteredMovies.forEach((movie, index) => {
         const movieItem = document.createElement("div");
         movieItem.classList.add("movie-item");

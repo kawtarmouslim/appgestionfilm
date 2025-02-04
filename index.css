@@ -5,6 +5,11 @@
     font-family: Arial, sans-serif;
 }
 
+body, section, footer {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 
 header {
@@ -67,6 +72,7 @@ section {
     
     padding: 20px;
     background-color: #CFE3D7;
+    
    
 }
 #movieList {
@@ -111,4 +117,53 @@ h2 {
    
     font-size: 9px;
 }
+.site-footer {
+    background-color: #bcd8bc;  /* Un vert doux assorti */
+    color: #333;
+    text-align: center;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+    border-top: 2px solid #a0c4a0;  /* Séparation subtile au lieu d'une ligne blanche */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.footer-links a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #4CAF50;
+}
+
+.social-media a {
+    font-size: 24px;
+    margin: 0 10px;
+    color: #333;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-media a:hover {
+    transform: scale(1.2);
+    color: #4CAF50;
+}
+
+.site-footer p {
+    margin-top: 10px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
 
