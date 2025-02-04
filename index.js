@@ -79,15 +79,31 @@ function selectmovie(index) {
                 <p>Genre: ${selectedFilm.genre}</p>
                 <p>Status: ${selectedFilm.status}</p>
                <button>Update</button>
-               <button>Delete</button>
+               <button id="deleteRecipeButton">Delete</button>
             </div>
         </div>
         `;
         detail.appendChild(selectedItem);
+        const deleteButton = document.getElementById("deleteRecipeButton");
+        deleteButton.addEventListener("click", function () {
+            deleteMovie(selectedFilm.nom);
+        });
+    
 
 };
 document.addEventListener("DOMContentLoaded", showDetails);
 
  
+function deleteMovie(movieName) {
+    const movies = JSON.parse(localStorage.getItem("movies")) || [];
+    const updatedMovies = movies.filter(movie => movie.nom !== movieName);
 
-  
+    if (updatedMovies.length < movies.length) {
+        localStorage.setItem("movies", JSON.stringify(updatedMovies));
+        localStorage.removeItem("selectedfilm");
+        alert(`Le film "${movieName}" a été supprimé avec succès.`);
+        window.location.href = "index.html";
+    } else {
+        alert(`Le film "${movieName}" est introuvable.`);
+    }
+}
