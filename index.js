@@ -117,6 +117,7 @@ function showUpdateForm(film) {
             
             <label for="status">Status:</label>
             <input type="text" id="status" value="${film.status}" required>
+
             
             <button type="submit">Save Changes</button>
         </form>
@@ -158,12 +159,6 @@ function showUpdateForm(film) {
 
     });
 }
-
-
-
-
-
-
  
 function deleteMovie(movieName) {
     const movies = JSON.parse(localStorage.getItem("movies")) || [];
@@ -177,4 +172,37 @@ function deleteMovie(movieName) {
     } else {
         alert(`Le film "${movieName}" est introuvable.`);
     }
+}
+function searchMovies() {
+    const searchQuery = document.getElementById("searchInput").value.toLowerCase();
+    const movies = JSON.parse(localStorage.getItem("movies")) || [];
+    const recipeMovies = document.getElementById("movieList");
+
+    // Vider l'affichage précédent
+    recipeMovies.innerHTML = "";
+
+    // Filtrer les films en fonction de la recherche
+    const filteredMovies = movies.filter(movie =>
+        movie.nom.toLowerCase().includes(searchQuery)
+    );
+
+    if (filteredMovies.length === 0) {
+        recipeMovies.innerHTML = "<p>Aucun film trouvé.</p>";
+        return;
+    }
+
+    // Affichage des films filtrés
+    filteredMovies.forEach((movie, index) => {
+        const movieItem = document.createElement("div");
+        movieItem.classList.add("movie-item");
+        movieItem.innerHTML = `
+            <div class="card">
+                <a href="detail.html" onclick="selectmovie(${index})">
+                    <img src="${movie.img}" alt="${movie.nom}">
+                </a>
+            </div>
+            <h3>${movie.nom}</h3>
+        `;
+        recipeMovies.appendChild(movieItem);
+    });
 }
