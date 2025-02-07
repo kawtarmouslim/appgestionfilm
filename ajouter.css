@@ -63,7 +63,12 @@ header {
     border: none;
     border-radius: 5px;
 }
-
+.form-group select {
+    flex: 2;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+}
 .download-btn {
     background: none;
     border: none;
