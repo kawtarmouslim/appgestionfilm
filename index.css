@@ -165,5 +165,28 @@ h2 {
     font-size: 14px;
     opacity: 0.8;
 }
+@media (max-width: 1200px) {
+    .movie-item {
+        width: 30%;
+    }
 
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
 
+@media (max-width: 480px) {
+    header {
+        height: 300px;
+    }
+
+    .nav a {
+        font-size: 14px;
+        margin: 0 5px;
+    }
+
+    .movie-item {
+        width: 90%;
+    }
+}
